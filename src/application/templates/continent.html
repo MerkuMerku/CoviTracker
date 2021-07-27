@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <article class="media content-section d-flex">
+        <div class="media-body">
+            <h2 class="article-title">{{ continent.continent }}</h2>
+            <small class="text-muted">date last processed: {{ continent.date_processed }}</small>
+            </br>
+            <span>{{ continent.total_cases }} total cases</span>
+            </br>
+            <span>{{ continent.total_deaths }} total deaths</span>
+            </br>
+            <span>{{ continent.total_recovered }} total recovered</span>
+        </div>
+    </article>
+
+{% endblock content %}

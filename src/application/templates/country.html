@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <article class="media content-section d-flex">
+        <div class="media-body">
+            <h2 class="article-title">{{ country.country }}</h2>
+            <small class="text-muted">date last processed: {{ country.date_processed }}</small>
+            </br>
+            <span>{{ country.total_cases }} total cases</span>
+            </br>
+            <span>{{ country.total_deaths }} total deaths</span>
+            </br>
+            <span>{{ country.total_recovered }} total recovered</span>
+        </div>
+    </article>
+
+{% endblock content %}
