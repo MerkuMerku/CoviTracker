@@ -1,7 +1,7 @@
 body {
 	background: #fafafa;
 	color: #333333;
-	margin-top: 5rem;
+	margin-top: 72px;
 }
 
 a {
@@ -92,11 +92,11 @@ a.article-title:hover {
 	text-decoration: none !important;
 }
 
-.dot {
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	display: inline-block;
+.dott {
+	height: 15px !important;
+	width: 15px !important;
+	border-radius: 50% !important;
+	display: inline-block !important;
 }
 
 .ms-3 {

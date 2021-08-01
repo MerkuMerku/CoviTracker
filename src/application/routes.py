@@ -85,7 +85,10 @@ def home():
             i += 1
             continents_data.append(ls)
 
-    return render_template('home.html', worlds=worlds, continents=continents, continents_data=continents_data, countries=countries, labels=labels, critical_active_percentage=critical_active_percentage, non_critical_active_percentage=non_critical_active_percentage, total_deaths_percentage=total_deaths_percentage, total_recovered_percentage=total_recovered_percentage)
+    # Detect the current page
+    segment = get_segment(request)
+
+    return render_template('home.html', segment=segment, worlds=worlds, continents=continents, continents_data=continents_data, countries=countries, labels=labels, critical_active_percentage=critical_active_percentage, non_critical_active_percentage=non_critical_active_percentage, total_deaths_percentage=total_deaths_percentage, total_recovered_percentage=total_recovered_percentage)
 
 
 @ app.route("/about")
@@ -110,3 +113,24 @@ def country(index):
     country = Countries.query.get_or_404(index)
     return render_template('country.html', country=country)
 
+
+@ app.route("/test")
+def test():
+    return render_template('layout2.html')
+
+# Helper - Extract current page name from request
+
+
+def get_segment(request):
+
+    try:
+
+        segment = request.path.split('/')[-1]
+
+        if segment == '':
+            segment = 'index'
+
+        return segment
+
+    except:
+        return None

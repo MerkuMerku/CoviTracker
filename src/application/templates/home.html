@@ -1,54 +1,56 @@
-{% extends "layout.html" %} 
+{% extends "layout2.html" %} 
 {% block content %} 
 
     {% for world in worlds %}
         <div class="card d-flex shadow-lg p-3 mb-5 bg-body rounded mb-4 mt-5">
             <div>
-                <h4 class="card-title">
+                <div class="card-title">
+                    <h4>
                     <a class="ms-3  nounderline" href="{{ url_for('world', index=world.index) }}">Covid-19 Cases - Worldwide</a>
-                </h4>
-                <hr class="ms-3">
-                <div class="card-metadata ms-3">
-                    <small class="text-muted">Latest figures as of {{ world.date_processed }}</small>
+                    </h4>
+                    <div class="card-metadata ms-3">
+                        <small class="text-muted">Latest figures as of {{ world.date_processed }}</small>
+                    </div>
                 </div>
+                <hr class="ms-3">    
             </div>
-            <div class="card-body d-flex row mt-3">
-                <div class=" d-flex justify-content-around"> 
+            <div class="card-body d-flex row mt-3 mb-3">
+                <div class=" d-flex justify-content-around p-0"> 
                     <div class="mb-4 mb-sm-0 col-sm-5">
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
-                                style="border-style: solid; border-color: rgba(95, 120, 138, 1); background-color: rgba(95, 120, 138, 0.2); "></span>
-                            <span>
+                            <span class="dott ms-3"
+                                style="border-style: solid !important; border-color: rgba(95, 120, 138, 1) !important; background-color: rgba(95, 120, 138, 0.2) !important; "></span>
+                            <span class="ms-4">
                                 Total Recovered </br> {{ world.total_recovered | int }}
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(153, 102, 255, 1); background-color: rgba(153, 102, 255, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Total Deaths </br> {{ world.total_deaths | int }} 
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(255, 99, 132, 1); background-color: rgba(255, 99, 132, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Critical Cases </br> {{ world.critical_active | int }} 
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(54, 162, 235, 1); background-color: rgba(54, 162, 235, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Non-Critical Cases </br> {{ world.non_critical_active | int }} 
                             </span>
                         </h6>
                     </div>
 
-                    <div class="media-body align-items-center me-3">
+                    <div class="media-body align-items-center me-3 ms-4 mt-3">
                         <canvas id="pieChart" width="250" height="250"></canvas>
                         <script>
                             var ctx = document.getElementById("pieChart").getContext("2d");
@@ -89,11 +91,9 @@
                                     },
                                 });
                         </script>
-                    </div>
-                    
+                    </div> 
                 </div>
             </div>
-            </br>
         </div>
     {% endfor %}
     
@@ -111,42 +111,42 @@
                 </div>
             </div>
             <div class="card-body d-flex row mt-3 mb-3">
-                <div class="d-flex justify-content-around">
+                <div class="d-flex justify-content-around p-0">
                     <div class="mb-4 mb-sm-0 col-sm-5">
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(95, 120, 138, 1); background-color: rgba(95, 120, 138, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Total Recovered </br> {{ continents_data[loop.index - 1][6] | int }}
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(153, 102, 255, 1); background-color: rgba(153, 102, 255, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Total Deaths </br> {{ continents_data[loop.index - 1][6] | int }}
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(255, 99, 132, 1); background-color: rgba(255, 99, 132, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Critical Cases </br> {{ continents_data[loop.index - 1][6] | int }}
                             </span>
                         </h6>
                         <hr>
                         <h6 class="mb-0 d-flex align-items-center">
-                            <span class="dot ms-3"
+                            <span class="dott ms-3"
                                 style="border-style: solid; border-color: rgba(54, 162, 235, 1); background-color: rgba(54, 162, 235, 0.2); "></span>
-                            <span>
+                            <span class="ms-4">
                                 Non-Critical Cases </br> {{ continents_data[loop.index - 1][6] | int }}
                             </span>
                         </h6>
                     </div>
 
-                    <div class="media-body align-items-center me-3">
+                    <div class="media-body align-items-center me-3 ms-4 mt-3">
                         <canvas id="myChart{{ loop.index }}" width="250" height="250"></canvas>
                         <script>
                             var ctx{{ loop.index }} = document.getElementById('myChart{{loop.index}}').getContext("2d");
@@ -187,22 +187,10 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     {% endfor %}    
 
-    <p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-            aria-expanded="false" aria-controls="collapseExample">
-            Button with data-bs-target
-        </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
-            activates the relevant trigger.
-        </div>
-    </div>
+    
 
     {% for country in countries %}
         
