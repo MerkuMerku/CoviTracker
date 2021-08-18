@@ -1,6 +1,6 @@
 # CoviTracker
 ## Preview
-
+![CoviTracker_Preview](https://user-images.githubusercontent.com/57494763/129817138-63dbb262-3c2e-447a-a90a-2a95135ded84.JPG)
 ## How to use it
 
 ```bash
