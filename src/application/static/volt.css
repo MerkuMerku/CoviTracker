@@ -22681,12 +22681,18 @@ fieldset:disabled .btn {
 	opacity: 1;
 	transition: opacity 0.3s;
 }
+.sidebar .sidebar-text-bold {
+	font-weight: 900;
+}
 @media (prefers-reduced-motion: reduce) {
 	.sidebar .sidebar-text,
 	.sidebar .link-arrow,
 	.sidebar .badge,
 	.sidebar .notification-count {
 		transition: none;
+	}
+	.sidebar .sidebar-text-bold {
+		font-weight: 900;
 	}
 }
 
@@ -27609,6 +27615,11 @@ a:hover,
 .font-medium {
 	font-size: 1.25rem;
 	font-weight: 300;
+}
+
+.font-large {
+	font-size: 1.25rem;
+	font-weight: 1500;
 }
 
 code[class*="language-"],

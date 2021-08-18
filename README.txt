@@ -1,45 +1,36 @@
-# Windows
+# CoviTracker
 
-## Setting up venv
+## How to use it
 
-set up venv inside the python covid tracker repo
-
-run 'py -m pip install -r requirements.txt' on windows to install requirements within your venv
-
-run `py -m pip install --upgrade requests` to upgrade packages
-
-## Flask
-### Running the flask site - PRODUCTION
-
-1) in the flask folder, navigate to the src directory
-2) in powershell, run `$env:FLASK_APP = "flasksite.py"` to set the PATH variable for the flask application
-3) run `python run.py` to start the site
-
-### Running the flask site - DEVELOPMENT
-
-1) in the flask folder, navigate to the src directory
-2) in powershell, run `$env:FLASK_APP = "flasksite.py"` to set the PATH variable for the flask application
-3) in powershell, run `$env:FLASK_ENV = "development"` to switch to the development environment
-3) run `python run.py` to start the site
-
-## SQLite3
-
-Open the site.db in sqlite3 with `sqlite3 site.db` 
-View tables using `.tables`
-Once the database is open, SQL commands can be passed to the console. Remember to end statements with `;`
-
-# MacOS
-
-## Flask 
-### Running the flask site - PRODUCTION
-
-1) in the flask folder, navigate to the src directory
-2) in zsh, run `export FLASK_APP = flasksite.py` to set the PATH variable for the flask application
-3) run `python run.py` to start the site
-
-### Running the flask site - DEVELOPMENT
-
-1) in the flask folder, navigate to the src directory
-2) in zsh, run `export FLASK_APP = flasksite.py` to set the PATH variable for the flask application
-3) in zsh, run `export FLASK_ENV = development` to switch to the development environment
-3) run `python run.py` to start the site
+```bash
+$ # Virtualenv modules installation (Unix based systems)
+$ virtualenv env
+$ source env/bin/activate
+$
+$ # Virtualenv modules installation (Windows based systems)
+$ # virtualenv env
+$ # .\env\Scripts\activate
+$
+$ # Install modules - SQLite Database
+$ pip3 install -r requirements.txt
+$
+$ # OR with PostgreSQL connector
+$ # pip install -r requirements-pgsql.txt
+$
+$ # Set the FLASK_APP environment variable
+$ (Unix/Mac) export FLASK_APP=run.py
+$ (Windows) set FLASK_APP=run.py
+$ (Powershell) $env:FLASK_APP = ".\run.py"
+$
+$ # Set up the DEBUG environment
+$ # (Unix/Mac) export FLASK_ENV=development
+$ # (Windows) set FLASK_ENV=development
+$ # (Powershell) $env:FLASK_ENV = "development"
+$
+$ # Start the application (development mode)
+$ # --host=0.0.0.0 - expose the app on all network interfaces (default 127.0.0.1)
+$ # --port=5000    - specify the app port (default 5000)
+$ flask run --host=0.0.0.0 --port=5000
+$
+$ # Access the dashboard in browser: http://127.0.0.1:5000/
+```
